@@ -50,7 +50,7 @@
             <a class="nav-link js-scroll-trigger" href="#skills">Professor Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+            <a class="nav-link js-scroll-trigger" href="#interests">Professor Time Table</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
@@ -104,25 +104,14 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
-          <h2 class="mb-5">Professor Information</h2>
-
+          <h2 class="mb-5">Professor Information<div class="form-group">
+    <input type="text" class="form-control" id="prof-search" placeholder="Search by Professor Name or Research Areas">
+  </div></h2>
+ <div class="my-auto" id="prof-out">
+        </div>
           
 
 
-         
-          <ul class="fa-ul mb-0">
-        
-<form action="/action_page.php">
-  <input type="text" name="fname" placeholder="Enter Prof's Name"><br><br>
-  
-  <input type="submit" value="Search">
-</form>
-  <div> 
-  	Info&nbsp about professors............................
-  </div>
-           
-            
-          </ul>
         </div>
       </section>
 
@@ -182,6 +171,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap/js/modal.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

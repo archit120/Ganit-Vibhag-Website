@@ -26,12 +26,18 @@
   });
 var notes_data = 0;
 var ques_data = 0;
+var prof_data = 0;
 var options = {
   keys: ['title', 'des', 'uploaded'],
   threshold: 0.3
 };
+var options2 = {
+  keys: ['name', 'res-area'],
+  threshold: 0.3
+};
 var fuse_notes = new Fuse(notes_data, options);
 var fuse_ques = new Fuse(ques_data, options);
+var fuse_prof = new Fuse(prof_data, options2);
 
 
 $.getJSON( "notes-data.json", function(data) {
@@ -41,6 +47,10 @@ $.getJSON( "notes-data.json", function(data) {
 $.getJSON( "ques-data.json", function(data) {
     ques_data = data;
     fuse_ques = new Fuse(ques_data, options);
+});
+$.getJSON( "prof-data.json", function(data) {
+    prof_data = data;
+    fuse_prof = new Fuse(prof_data, options2);
 });
 $('#note-search').on('input',function(e){
     var res = fuse_notes.search($('#note-search').val());
@@ -73,6 +83,22 @@ $('#ques-search').on('input',function(e){
           </div>'
     });
     $('#ques-out').html(ft)
+});
+$('#prof-search').on('input',function(e){
+    var res = fuse_prof.search($('#prof-search').val());
+    var ft = ""
+    res.forEach(function(d){
+        ft +='<div class="resume-item d-flex flex-column flex-md-row mb-5">\
+            <div class="resume-content mr-auto">\
+                <div class="subheading"><a href="" class="text-secondary">'+d['name']+'</a></div>\
+              <p>'+d['des']+'<p>\
+            </div>\
+            <div class="resume-date text-md-right">\
+              <span class="text-primary">'+d['res-area']+'</span>\
+            </div>\
+          </div>'
+    });
+    $('#prof-out').html(ft)
 });
 //fuse.search('old');
 
