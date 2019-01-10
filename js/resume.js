@@ -24,5 +24,58 @@
   $('body').scrollspy({
     target: '#sideNav'
   });
+var notes_data = 0;
+var ques_data = 0;
+var options = {
+  keys: ['title', 'des', 'uploaded'],
+  threshold: 0.3
+};
+var fuse_notes = new Fuse(notes_data, options);
+var fuse_ques = new Fuse(ques_data, options);
+
+
+$.getJSON( "notes-data.json", function(data) {
+    notes_data = data;
+     fuse_notes = new Fuse(notes_data, options);
+});
+$.getJSON( "ques-data.json", function(data) {
+    ques_data = data;
+    fuse_ques = new Fuse(ques_data, options);
+});
+$('#note-search').on('input',function(e){
+    var res = fuse_notes.search($('#note-search').val());
+    var ft = ""
+    res.forEach(function(d){
+        ft +='<div class="resume-item d-flex flex-column flex-md-row mb-5">\
+            <div class="resume-content mr-auto">\
+                <div class="subheading"><a href="' + d['link']+'" class="text-secondary">'+d['title']+'</a></div>\
+              <p>'+d['des']+'<p>\
+            </div>\
+            <div class="resume-date text-md-right">\
+              <span class="text-primary">'+d['uploaded']+'</span>\
+            </div>\
+          </div>'
+    });
+    $('#note-out').html(ft)
+});
+$('#ques-search').on('input',function(e){
+    var res = fuse_ques.search($('#ques-search').val());
+    var ft = ""
+    res.forEach(function(d){
+        ft +='<div class="resume-item d-flex flex-column flex-md-row mb-5">\
+            <div class="resume-content mr-auto">\
+                <div class="subheading"><a href="' + d['link']+'" class="text-secondary">'+d['title']+'</a></div>\
+              <p>'+d['des']+'<p>\
+            </div>\
+            <div class="resume-date text-md-right">\
+              <span class="text-primary">'+d['uploaded']+'</span>\
+            </div>\
+          </div>'
+    });
+    $('#ques-out').html(ft)
+});
+//fuse.search('old');
 
 })(jQuery); // End of use strict
+
+
