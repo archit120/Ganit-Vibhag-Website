@@ -104,9 +104,9 @@
           <h2 class="mb-5">Professor Information<div class="form-group">
     <input type="text" class="form-control" id="prof-search" placeholder="Search by Professor Name or Research Areas">
   </div></h2>
- <div class="my-auto" id="prof-out">
         </div>
-          
+           <div class="my-auto" id="prof-out">
+
 
 
         </div>
@@ -116,18 +116,63 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
-          <h2 class="mb-5">Time Table of Prof</h2>
-          <p>Get to know more about the place where your Prof. will most probably be</p>
+          <h2 class="mb-5">Professor Time Talbe<div class="form-group">
+    <input type="text" class="form-control" id="prof-time-search" placeholder="Search by Professor Name">
+  </div></h2>
+        </div>
+          
+ <div class="my-auto" id="prof-time-out">
 
-<form action="/action_page.php">
-  <input type="text" name="fname" placeholder="Enter Prof's Name"><br><br>
-  
-  <input type="submit" value="Search">
-</form>
+
         </div>
       </section>
 
       <hr class="m-0">
+
+<!-- Modal -->
+<div class="modal fade" id="prof-info" tabindex="-1" role="dialog" aria-labelledby="prof-info" aria-hidden="true">
+  <div class="modal-dialog bd- modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Name</h3>
+          </div>
+          <div class="text-md-right">
+            <div class="subheading mb-3">Archit Rungta</div>
+          </div>
+        </div>
+          
+      
+        
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Address</h3>
+          </div>
+          <div class="text-md-right">
+            <div class="subheading mb-3">Archit Rungta</div>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Contact Number</h3>
+          </div>
+          <div class="text-md-right">
+            <div class="subheading mb-3">Archit Rungta</div>
+          </div>
+        </div>
+      </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
 
     </div>
 

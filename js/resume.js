@@ -90,7 +90,7 @@ $('#prof-search').on('input',function(e){
     res.forEach(function(d){
         ft +='<div class="resume-item d-flex flex-column flex-md-row mb-5">\
             <div class="resume-content mr-auto">\
-                <div class="subheading"><a href="" class="text-secondary">'+d['name']+'</a></div>\
+                <div class="subheading"><a href = "#prof-info" data-toggle="modal"  data-target="#prof-info" class="text-secondary">'+d['name']+'</a></div>\
               <p>'+d['des']+'<p>\
             </div>\
             <div class="resume-date text-md-right">\
